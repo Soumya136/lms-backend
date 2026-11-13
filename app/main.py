@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
+from app.domain.auth.routes import router as auth_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -20,5 +21,5 @@ app.add_middleware(
 async def health_check():
     return {"status": "ok", "db_connected": True}
 
-# You will mount routers here as you build them:
-# app.include_router(auth_router, prefix=settings.API_V1_STR + "/auth", tags=["auth"])
+# Mount authentication routes
+app.include_router(auth_router, prefix=f"{settings.API_V1_STR}/auth", tags=["Authentication"])
