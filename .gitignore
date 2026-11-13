@@ -1,0 +1,27 @@
+# Environment variables (CRITICAL: NEVER COMMIT REAL SECRETS)
+.env
+.env.local
+.env.*.local
+
+# Python virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
